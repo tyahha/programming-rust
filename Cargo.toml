@@ -2,6 +2,7 @@
 
 members = [
     "main",
+    "gcd-lib",
     "gcd",
     "actix-gcd",
 ]
