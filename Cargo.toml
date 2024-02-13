@@ -4,4 +4,5 @@ members = [
     "gcd-lib",
     "gcd",
     "actix-gcd",
+    "mandelbrot",
 ]
