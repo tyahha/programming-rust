@@ -16,6 +16,18 @@ fn escape_time(c: Complex<f64>, limit: usize) -> Option<usize> {
     None
 }
 
+fn parse_complex(s: &str) -> Option<Complex<f64>> {
+    match parse_pair(s, ',') {
+        Some((re, im)) => Some(Complex { re, im }),
+        None => None,
+    }
+}
+
+#[test]
+fn test_parse_complex() {
+    assert_eq!(parse_complex("0.1,0.2"), Some(Complex {re: 0.1, im: 0.2}))
+}
+
 fn parse_pair<T: FromStr>(s: &str, separator: char) -> Option<(T, T)> {
     match s.find(separator) {
         None => None,
