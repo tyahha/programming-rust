@@ -1,5 +1,10 @@
+use std::fmt::Error;
 use num::Complex;
 use std::str::FromStr;
+use image::{ColorType, ImageEncoder};
+use image::codecs::png::PngEncoder;
+use std::fs::File;
+use image::ImageError::Encoding;
 
 fn main() {
     println!("Hello, world!");
@@ -92,4 +97,12 @@ fn render(
                 }
         }
     }
+}
+
+fn write_image(filename: &str, pixels: &[u8], bounds: (usize, usize)) -> Result<(), std::io::Error> {
+    let output = File::create(filename)?;
+
+    let encoder = PngEncoder::new(output);
+    encoder.write_image(pixels, bounds.0 as u32, bounds.1 as u32, ColorType::Rgb8)?;
+    Ok(())
 }
