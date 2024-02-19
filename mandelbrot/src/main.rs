@@ -1,10 +1,8 @@
-use std::fmt::Error;
 use num::Complex;
 use std::str::FromStr;
 use image::{ColorType, ImageEncoder};
 use image::codecs::png::PngEncoder;
 use std::fs::File;
-use image::ImageError::Encoding;
 
 fn main() {
     println!("Hello, world!");
@@ -85,7 +83,7 @@ fn render(
     upper_left: Complex<f64>,
     lower_right: Complex<f64>,
 ) {
-    assert!(pixels.len() == bounds.0 * bounds.1);
+    assert_eq!(pixels.len(), bounds.0 * bounds.1);
 
     for row in 0..bounds.1 {
         for column in 0..bounds.0 {
