@@ -97,7 +97,7 @@ fn render(
     }
 }
 
-fn write_image(filename: &str, pixels: &[u8], bounds: (usize, usize)) -> Result<(), std::io::Error> {
+fn write_image(filename: &str, pixels: &[u8], bounds: (usize, usize)) -> Result<(), image::ImageError> {
     let output = File::create(filename)?;
 
     let encoder = PngEncoder::new(output);
