@@ -10,7 +10,17 @@ struct Arguments {
 
 fn main() {
     let args = parse_arguments();
-    println!("{:?}", args);
+
+    let data = match std::fs::read_to_string(&args.filename) {
+        Ok(v) => v,
+        Err(e) => {
+            eprintln!("{}, failed to read from file '{}' : {:?}",
+                      "ERROR:".red().bold(), args.filename, e);
+            std::process::exit(1);
+        },
+    };
+
+    println!("data: {}", data);
 }
 
 fn print_usage() {
