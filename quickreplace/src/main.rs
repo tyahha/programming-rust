@@ -21,7 +21,14 @@ fn main() {
         },
     };
 
-    let replaced_data = replace(&args.target, &args.replacement, &data).unwrap();
+    let replaced_data = match replace(&args.target, &args.replacement, &data) {
+        Ok(v) => v,
+        Err(e) => {
+            eprintln!("{} failed to replace text: {:?}",
+                "Error".red().bold(), e);
+            std::process::exit(1);
+        },
+    };
 
     println!("replaced data: {}", replaced_data);
 }
