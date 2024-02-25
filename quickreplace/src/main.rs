@@ -1,4 +1,5 @@
 use text_colorizer::*;
+use regex::Regex;
 
 #[derive(Debug)]
 struct Arguments {
@@ -20,7 +21,9 @@ fn main() {
         },
     };
 
-    println!("data: {}", data);
+    let replaced_data = replace(&args.target, &args.replacement, &data).unwrap();
+
+    println!("replaced data: {}", replaced_data);
 }
 
 fn print_usage() {
@@ -45,4 +48,9 @@ fn parse_arguments() -> Arguments {
         filename: args[2].clone(),
         output: args[3].clone(),
     }
+}
+
+fn replace(target: &str, replacement: &str, text: &str) -> Result<String, regex::Error> {
+    let regex = Regex::new(target)?;
+    Ok(regex.replace_all(text, replacement).to_string())
 }
