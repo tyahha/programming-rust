@@ -1,3 +1,4 @@
+use std::fs;
 use text_colorizer::*;
 use regex::Regex;
 
@@ -30,7 +31,14 @@ fn main() {
         },
     };
 
-    println!("replaced data: {}", replaced_data);
+    match fs::write(&args.output, &replaced_data) {
+        Ok(v) => v,
+        Err(e) => {
+            eprintln!("{} failed to write to file '{}': {:?}",
+                "Error:".red().bold(), args.output, e);
+            std::process::exit(1);
+        }
+    }
 }
 
 fn print_usage() {
