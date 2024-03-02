@@ -4,6 +4,7 @@ fn main() {
     wrapped_calc();
     saturated_calc();
     overflowed_calc();
+    float_research();
 }
 
 fn checked_overflow() {
@@ -31,4 +32,8 @@ fn saturated_calc() {
 fn overflowed_calc() {
     println!("overflowed 10_u8 + 20 = {:?}", 10_u8.overflowing_add(30));
     println!("overflowed 100_u8 + 200 = {:?}", 100_u8.overflowing_add(200));
+}
+
+fn float_research() {
+    println!("(-1. / f32::INFINITY).is_sign_negative()) = {}", (-1. / f32::INFINITY).is_sign_negative());
 }
