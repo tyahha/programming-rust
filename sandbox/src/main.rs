@@ -36,4 +36,5 @@ fn overflowed_calc() {
 
 fn float_research() {
     println!("(-1. / f32::INFINITY).is_sign_negative()) = {}", (-1. / f32::INFINITY).is_sign_negative());
+    println!("-f32::MIN == f32::MAX = {}", -f32::MIN == f32::MAX);
 }
