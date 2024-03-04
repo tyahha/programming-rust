@@ -5,6 +5,7 @@ fn main() {
     saturated_calc();
     overflowed_calc();
     float_research();
+    boolean_research();
 }
 
 fn checked_overflow() {
@@ -37,4 +38,9 @@ fn overflowed_calc() {
 fn float_research() {
     println!("(-1. / f32::INFINITY).is_sign_negative()) = {}", (-1. / f32::INFINITY).is_sign_negative());
     println!("-f32::MIN == f32::MAX = {}", -f32::MIN == f32::MAX);
+}
+
+fn boolean_research() {
+    println!("false as i32 = {}", false as i32);
+    println!("true as i32 = {}", true as i32);
 }
