@@ -6,6 +6,7 @@ fn main() {
     overflowed_calc();
     float_research();
     boolean_research();
+    char_research();
 }
 
 fn checked_overflow() {
@@ -43,4 +44,13 @@ fn float_research() {
 fn boolean_research() {
     println!("false as i32 = {}", false as i32);
     println!("true as i32 = {}", true as i32);
+}
+
+fn char_research() {
+    println!("--- char research");
+    println!("  {}", '\u{CA0}');
+    println!("'\\x2A' = {}", '\x2A');
+    println!("'ಠ' as u16 = {}", 'ಠ' as u16);
+    println!("42_u8 as char = {}", 42_u8 as char);
+    println!("std::char::from_u32(3232) = {:?}", std::char::from_u32(3232));
 }
