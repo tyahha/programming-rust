@@ -7,6 +7,7 @@ fn main() {
     float_research();
     boolean_research();
     char_research();
+    array_research();
 }
 
 fn checked_overflow() {
@@ -53,4 +54,11 @@ fn char_research() {
     println!("'ಠ' as u16 = {}", 'ಠ' as u16);
     println!("42_u8 as char = {}", 42_u8 as char);
     println!("std::char::from_u32(3232) = {:?}", std::char::from_u32(3232));
+}
+
+fn array_research() {
+    let mut a = [ 3, 1, 4, 100, 5, 8];
+    println!("before sort = {:?}", a);
+    a.sort();
+    println!("after sort = {:?}", a);
 }
