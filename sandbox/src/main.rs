@@ -8,6 +8,7 @@ fn main() {
     boolean_research();
     char_research();
     array_research();
+    vector_sandbox();
 }
 
 fn checked_overflow() {
@@ -61,4 +62,30 @@ fn array_research() {
     println!("before sort = {:?}", a);
     a.sort();
     println!("after sort = {:?}", a);
+}
+
+fn vector_sandbox() {
+    println!("----- vector sandbox");
+
+    fn print_vector(v: &Vec<i32>) {
+        println!("------- print vector");
+        for x in v {
+            println!("{}", x);
+        }
+    }
+
+    let mut primes = vec![1,2,3,5,7,11];
+    print_vector(&primes);
+
+    primes.push(13);
+    print_vector(&primes);
+
+    let new_vec = vec![0; 3];
+    print_vector(&new_vec);
+
+    let mut from_range: Vec<i32> = (0..5).collect();
+    print_vector(&from_range);
+
+    from_range.reverse();
+    print_vector(&from_range);
 }
