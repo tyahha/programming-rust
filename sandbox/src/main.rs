@@ -88,4 +88,20 @@ fn vector_sandbox() {
 
     from_range.reverse();
     print_vector(&from_range);
+
+    let mut v: Vec<i32> = Vec::with_capacity(2);
+    println!("before push");
+    println!("len() = {}", v.len());
+    println!("capacity() = {}", v.capacity());
+
+    v.push(1);
+    v.push(2);
+    println!("after push");
+    println!("len() = {}", v.len());
+    println!("capacity() = {}", v.capacity());
+
+    v.push(3);
+    println!("after extra push");
+    println!("len() = {}", v.len());
+    println!("capacity() = {}", v.capacity());
 }
