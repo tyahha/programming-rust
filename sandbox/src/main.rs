@@ -9,6 +9,7 @@ fn main() {
     char_research();
     array_research();
     vector_sandbox();
+    slice_sandbox();
 }
 
 fn checked_overflow() {
@@ -104,4 +105,30 @@ fn vector_sandbox() {
     println!("after extra push");
     println!("len() = {}", v.len());
     println!("capacity() = {}", v.capacity());
+}
+
+fn slice_sandbox() {
+    println!("----- slice sandbox");
+
+    let v = vec![0.0, -0.7097, 1., 2., 3., 4.];
+    let a = [0.0, -0.707];
+    println!("v = {:?}", v);
+    println!("a = {:?}", a);
+
+    let sv: &[f64] = &v;
+    let sa: &[f64] = &a;
+    println!("sv = {:?}", sv);
+    println!("sa = {:?}", sa);
+
+    fn print(n: &[f64]) {
+        for e in n {
+            println!("{}", e);
+        }
+    }
+
+    print(&a);
+    print(&v);
+
+    print(&v[0..2]);
+    print(&a[1..])
 }
