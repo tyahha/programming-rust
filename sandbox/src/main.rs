@@ -10,6 +10,7 @@ fn main() {
     array_research();
     vector_sandbox();
     slice_sandbox();
+    string_sandbox();
 }
 
 fn checked_overflow() {
@@ -131,4 +132,13 @@ fn slice_sandbox() {
 
     print(&v[0..2]);
     print(&a[1..])
+}
+
+fn string_sandbox() {
+    println!("----- string sandbox");
+    println!("multi line string
+             multiline string");
+    println!("multi line string2\
+             multiline string");
+    println!(r"row string c:\Program Files\Gorillas");
 }
