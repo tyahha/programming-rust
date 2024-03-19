@@ -141,4 +141,8 @@ fn string_sandbox() {
     println!("multi line string2\
              multiline string");
     println!(r"row string c:\Program Files\Gorillas");
+    println!(r###"b"GET" == &[b'G', b'E', b'T'] = {}"###, b"GET" == &[b'G', b'E', b'T']);
+
+    println!(r###""ಠ_ಠ".len() = {}"###, "ಠ_ಠ".len());
+    println!(r###""ಠ_ಠ".chars().count() = {}"###, "ಠ_ಠ".chars().count());
 }
