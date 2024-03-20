@@ -145,4 +145,13 @@ fn string_sandbox() {
 
     println!(r###""ಠ_ಠ".len() = {}"###, "ಠ_ಠ".len());
     println!(r###""ಠ_ಠ".chars().count() = {}"###, "ಠ_ಠ".chars().count());
+
+    let str = "&str";
+    let string = str.to_string();
+    let string2 = str.to_owned();
+    println!("str = {}, string = {}, string2 = {}", str, string, string2);
+
+    let bits = vec!["veni", "vidi", "vici"];
+    println!("bits.concat() = {}", bits.concat());
+    println!("bits.join(\", \") = {}", bits.join(","));
 }
