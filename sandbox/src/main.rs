@@ -154,4 +154,6 @@ fn string_sandbox() {
     let bits = vec!["veni", "vidi", "vici"];
     println!("bits.concat() = {}", bits.concat());
     println!("bits.join(\", \") = {}", bits.join(","));
+
+    println!(r###""ONE".to_lowercase() == "one" -> {}"###, "ONE".to_lowercase() == "one")
 }
