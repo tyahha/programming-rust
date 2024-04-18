@@ -11,6 +11,7 @@ fn main() {
     vector_sandbox();
     slice_sandbox();
     string_sandbox();
+    copy_type_sandbox();
 }
 
 fn checked_overflow() {
@@ -156,4 +157,15 @@ fn string_sandbox() {
     println!("bits.join(\", \") = {}", bits.join(","));
 
     println!(r###""ONE".to_lowercase() == "one" -> {}"###, "ONE".to_lowercase() == "one")
+}
+
+#[derive(Copy, Clone)]
+struct Label { number: i32 }
+
+fn print(l: Label) { println!("STAMP: {}", l.number); }
+
+fn copy_type_sandbox() {
+    let l = Label { number: 1 };
+    print(l);
+    println!("PPP: {}", l.number);
 }
