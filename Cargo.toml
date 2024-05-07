@@ -7,4 +7,5 @@ members = [
     "mandelbrot",
     "quickreplace",
     "sandbox",
+    "ref-sandbox",
 ]
