@@ -194,3 +194,18 @@ match value {
 - 少なくとも１つにmatchされなけれがならない
 - すべてのケースをカバーしないmatch式は許容されない
 - ifとmatchの値はすべて同じ型でなければならない
+
+if let式は次のような形になっている
+
+```rust
+if let pattern = expr {
+    block1
+} else {
+    block2
+}
+```
+
+- exprがpatternにマッチするならblock1が実行され、マッチしなければblock2が実行される
+- elseは省略可能
+- matchがあれはif let式を利用する必要はない
+  - matchのpatternが1つだけの場合の省略形と考えることができる
