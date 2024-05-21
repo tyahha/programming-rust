@@ -209,3 +209,19 @@ if let pattern = expr {
 - elseは省略可能
 - matchがあれはif let式を利用する必要はない
   - matchのpatternが1つだけの場合の省略形と考えることができる
+
+## loop
+
+- ループには4つの式がある
+  - while
+  - while let
+  - loop
+  - for in
+- rustにはループも式になっているがwhileとforの値は常に()になっているのであまり意味がない
+- loopは指定すれば値を返す
+- ..演算子は範囲(range)を生成する。よくfor inで用いられる
+  - 0..20はstd::opt::Range { start: 0, end: 20 }と同じ意味になる
+  - std::iter::IntoIteratorトレイトを実装しているものはfor inでループ可能
+  - Rangeは実装している
+  - コレクションを参照にしてループするとコレクションの要素の参照に対するループになる
+  - mutに対するループは、各要素のmutのループになる
