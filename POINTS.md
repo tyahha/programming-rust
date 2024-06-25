@@ -335,3 +335,18 @@ if let pattern = expr {
   - パニックを巻き戻している最中に.drop()メソッドでパニックが起きた場合、致命的な状態と見なされる。Rustは巻き戻しを中止してプロセスを強制終了する。
     - この動作はカスタマイズできる。コンパイル時に-Cpanic=abortと指定すると最初のパニックで即座にプロセスをアボートする。
       - このコンパイルオプションを指定するとスタックを巻き戻す必要がなくなるのでコンパイルしたバイナリのサイズは小さくなる
+
+## Result
+
+- パターン
+  - matchを使う
+  - is_ok()とis_error()
+  - ok()
+  - error()
+  - unwrap_or(fallback)
+  - unwrap_or_else(fallback_fn)
+  - unwrap()
+  - expect(message)
+  - as_ref()
+  - as_mut()
+- is_okとis_error以外のメソッドは消費してしまうのでas_refと組み合わせて使用して借用すると良い
