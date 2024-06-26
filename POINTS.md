@@ -350,3 +350,4 @@ if let pattern = expr {
   - as_ref()
   - as_mut()
 - is_okとis_error以外のメソッドは消費してしまうのでas_refと組み合わせて使用して借用すると良い
+- Err型は省略した型エイリアスが定義されることがよくある
