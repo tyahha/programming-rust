@@ -465,3 +465,11 @@ pub struct JsonError {
   - 例えば2020エディションは存在しない
 - ほとんどの場合は最新のエディションを使った方が良い。
 - もし古いエディションで書いたクレートがあったら、cargo fixコマンドで新しいエディションに対応するように自動的にアップグレードできる場合もある。
+
+## ビルドプロファイル
+
+- コマンドとCargo.tomlの設定セクション
+  - `cargo build`: [profile.dev]
+  - `cargobuild --release`: [profile.release]
+  - `cargo test`: [profile.test]
+- プロファイラを利用する場合は最適化を行つつデバッグシンボルが着くようにコンパイルしなければならない
