@@ -1357,6 +1357,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "test-only"
+version = "0.1.0"
+
+[[package]]
 name = "text-colorizer"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
