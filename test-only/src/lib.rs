@@ -1,3 +1,5 @@
+use std::num::ParseIntError;
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
@@ -18,4 +20,17 @@ fn math_works() {
     let x: i32 = 1;
     assert!(x.is_positive());
     assert_eq!(x + 1, 2);
+}
+
+#[test]
+#[allow(unconditional_panic, unused_must_use)]
+#[should_panic(expected = "divide by zero")]
+fn test_divide_by_zero_error() {
+    1/ 0;
+}
+
+#[test]
+fn explicit_radix() -> Result<(), ParseIntError> {
+    i32::from_str_radix("1024", 10)?;
+    Ok(())
 }
