@@ -1,5 +1,17 @@
 use std::num::ParseIntError;
 
+/// test
+///
+/// ```
+/// assert_eq!(test_only::add(1,2), 3);
+/// ```
+///
+/// test no_run
+///
+/// ```no_run
+/// assert_eq!(test_only::add(1,2), 4);
+/// ```
+///
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
