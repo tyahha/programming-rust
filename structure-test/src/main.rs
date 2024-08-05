@@ -16,6 +16,34 @@ struct Bounds(pub usize, pub usize);
 #[derive(Debug)]
 struct Onesuch;
 
+#[derive(Debug)]
+pub struct Queue<T> {
+    older: Vec<T>,
+    younger: Vec<T>,
+}
+
+impl<T> Queue<T> {
+    pub fn new() -> Queue<T> {
+        Queue { older: Vec::new(), younger: Vec::new() }
+    }
+
+    pub fn push(&mut self, t: T) {
+        self.younger.push(t);
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.older.is_empty() && self.younger.is_empty()
+    }
+
+    // ...
+}
+
+impl Queue<i32> {
+    pub fn print_younger_numbers(&self) {
+        println!("young numbers: {:?}", self.younger);
+    }
+}
+
 fn main() {
     let width = 1024;
     let height = 574;
@@ -30,4 +58,13 @@ fn main() {
 
     let o = Onesuch;
     println!("o = {:?}", o);
+
+    let mut q = Queue::new();
+    q.push(1);
+    println!("Queue: {:?}", q);
+    q.print_younger_numbers();
+
+    let mut q2 = Queue::new();
+    q2.push("aaa");
+    println!("Queue: {:?}", q2);
 }
