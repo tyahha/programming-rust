@@ -44,6 +44,22 @@ impl Queue<i32> {
     }
 }
 
+struct Extrema<'a> {
+    greatest: &'a i32,
+    least: &'a i32,
+}
+
+fn find_extrema<'s>(slice: &'s [i32]) -> Extrema<'s> {
+    let mut greatest = &slice[0];
+    let mut least = &slice[0];
+
+    for i in 1..slice.len() {
+        if slice[i] < *least    { least = &slice[i]; }
+        if slice[i] > *greatest { greatest = &slice[i]; }
+    }
+    Extrema { greatest, least }
+}
+
 fn main() {
     let width = 1024;
     let height = 574;
@@ -67,4 +83,9 @@ fn main() {
     let mut q2 = Queue::new();
     q2.push("aaa");
     println!("Queue: {:?}", q2);
+
+    let a = [0, -3, 0, 15, 49];
+    let e = find_extrema(&a);
+    println!("least: {}", e.least);
+    println!("greatest: {}", e.greatest);
 }
